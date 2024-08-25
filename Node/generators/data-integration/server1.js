@@ -18,6 +18,8 @@ async function handler(request, response) {
       product: productName
     }
 
+    console.log(result);
+
     return response.end(JSON.stringify(result))
   }
 
