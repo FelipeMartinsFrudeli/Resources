@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig-preset.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true,
+    "experimentalDecorators": true
+  },
+  "include": ["./**/*.ts"]
+}

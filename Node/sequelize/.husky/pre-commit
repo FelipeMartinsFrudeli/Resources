@@ -1,0 +1,2 @@
+yarn lint-staged --concurrent false
+yarn delete-changelog

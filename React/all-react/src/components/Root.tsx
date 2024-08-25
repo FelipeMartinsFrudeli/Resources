@@ -1,0 +1,15 @@
+import React from "react";
+import Routes from "./Routes";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+
+const queryClient = new QueryClient()
+
+const Root = () => {
+    return <>
+        <QueryClientProvider client={queryClient}>
+            <Routes />
+        </QueryClientProvider>
+    </>
+}
+
+export default Root

@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "config:base",
+    ":maintainLockFilesWeekly",
+    ":semanticCommitTypeAll(meta)",
+    ":semanticCommitScopeDisabled"
+  ],
+  "automergeStrategy": "squash",
+  "automergeType": "branch",
+  "semanticCommitType": "meta",
+  "ignorePaths": ["dev/**/oldest/docker-compose.yml"],
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest", "lockFileMaintenance"],
+      "automerge": true
+    }
+  ],
+  "labels": ["no-autoupdate"],
+  "postUpdateOptions": ["yarnDedupeHighest"]
+}

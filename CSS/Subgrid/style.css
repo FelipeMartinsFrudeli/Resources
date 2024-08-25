@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  min-width: 0;
+}
+
+body {
+  font-family: system-ui;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(autofit, minmax(350px, 1fr));
+  gap: 1rem;
+  margin-top: 5rem;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.box {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
