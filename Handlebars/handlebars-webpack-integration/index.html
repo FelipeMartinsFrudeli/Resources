@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/typograph.css">
+    <link rel="stylesheet" href="css/resposive.css">
+  </head>
+  <body>
+    <div class="page-wrap">
+      <h1>Handlebars Tutorial</h1>
+      <div id="products-container"></div>
+    </div>
+
+    <script id="products-template" type="text/x-handlebars-template">
+      <div class="container">
+        {{#each products}}
+          <div style="margin-bottom: 32px;">
+            <h2 style="margin-bottom: 8px;">{{ title }}</h2>
+
+            {{#if price}}<h3 style="margin-bottom: 16px;">{{ price }}</h3>{{/if}}
+            {{#unless price}}<h3 style="margin-bottom: 16px;">...</h3>{{/unless}}
+    
+            <div style="margin-bottom: 8px;">
+              {{#each images}}
+                <img src="{{.}}" alt="" style="width: 50px;">
+              {{/each}}
+            </div>
+    
+            <h3 style="margin-bottom: 16px;">Dimensions</h3>
+            <div style="display: flex; gap: 12px;">
+              {{#with dimensions}}
+                <p>depth: {{depth}}</p>
+                <p>height: {{height}}</p>
+                <p>width: {{width}}</p>
+              {{/with}}
+            </div>
+            
+            <div style="display: flex; gap: 12px;">
+              <p>index: {{@index}}</p>
+              <p>first: {{@first}}</p>
+              <p>last: {{@last}}</p>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </script>
+
+    <script src="js/handlebars-v4.7.8.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
